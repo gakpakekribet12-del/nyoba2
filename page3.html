@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>yuk naik gunung!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Mono', monospace;
+      background: linear-gradient(to bottom, #c9e4c5, #ffffff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      color: #2f5d62;
+    }
+    p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    select {
+      padding: 8px;
+      font-size: 16px;
+      margin: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #588157;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .gunung {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="gunung">⛰️</div>
+  <h1>Naik gunung bareng yuk!</h1>
+  <p id="namaParagraf">tapi cuma sama kamu doang loh 😌</p>
+
+  <p>Pilih waktu:</p>
+  <select id="waktu">
+    <option>pagi</option>
+    <option>siang</option>
+    <option>sore</option>
+    <option>malam</option>
+  </select>
+
+  <p>Pilih tanggal:</p>
+  <input type="date" id="tanggal" />
+
+  <button onclick="nextPage()">lanjut lagi ➤</button>
+
+  <script>
+    const name = localStorage.getItem("girlName");
+    if (name) {
+      document.getElementById("namaParagraf").innerText = `tapi cuma sama kamu doang, ${name} 😌`;
+    }
+
+    <audio controls autoplay loop>
+    <source src="Too Good to Say Goodbye.mp3" type="audio/mp3">
+  </audio>
+
+    function nextPage() {
+      const waktu = document.getElementById("waktu").value;
+      const tanggal = document.getElementById("tanggal").value;
+      localStorage.setItem("waktunaikgunung", waktu);
+      localStorage.setItem("tanggalnaikgunung", tanggal);
+      window.location.href = "page4.html";
+    }
+  </script>
+</body>
+</html>

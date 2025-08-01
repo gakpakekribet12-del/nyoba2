@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Terima Kasih yaa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Mono' monospace;
+      background: linear-gradient(to top, #fff5e1, #f4e2d8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    h1 {
+      color: #614124;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 20px;
+    }
+    .thanks {
+      font-style: italic;
+      margin-top: 30px;
+    }
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #f5c518;
+      animation: twinkle 2s infinite;
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+    audio {
+      position: absolute;
+      bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Thank you, <span id="namaMala">...</span> 🌼</h1>
+  <p>Udah mau buka semua ini dan sabar ngikutin dari awal. Gak banyak yang bisa aku kasih, tapi semoga ini cukup buat bikin kamu senyum hari ini. 🤍</p>
+  <p class="thanks">selamat hari girl friend day, malaaa (eh tapi ini bukan nembak lohh, soalnya aku bilangnya temen bukan pacar hehe😏)</p>
+  <p class="thanks">aku cuma pengen kamu tau, kamu itu unik, lucu, kuat, dan pantas disayang. tapi tetap jadi kamu yang sekarang ya, jangan berubah yaaa,
+    terakhir nih, sok imut lu cantik, dengerin lagune dulu wajib sampai akhir wleee </p>
+
+  <audio controls autoplay loop>
+    <source src="Bruno Mars - Just The Way You Are (Official Music Video).mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    const nama = localStorage.getItem("girlName");
+    if (nama) {
+      document.getElementById("namaMala").innerText = nama;
+    }
+
+    // Tambah bintang random
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDelay = `${Math.random() * 2}s`;
+      document.body.appendChild(star);
+    }
+  </script>
+</body>
+</html>

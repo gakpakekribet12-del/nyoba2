@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Ucapan untuk Kamu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Mono' monospace;
+      background: linear-gradient(to bottom, #d0ecff, #ffffff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      color: #2a6f97;
+      margin-bottom: 10px;
+    }
+    p {
+      max-width: 80%;
+      font-size: 18px;
+      color: #333;
+    }
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #2a6f97;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .heart {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: pink;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: fall 2s linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1 id="greeting">hai, mala 💙</h1>
+  <p id="message">
+   Hari ini katanya National Girlfriend Day, yaa walaupun kamu bukan pacarku (eh, dan aku juga gak nembak kok 😌), tapi aku tetep pengen ngucapin sesuatu buat kamu.<br><br>
+   karena...… dari semua orang yang pernah aku kenal, kamu tuh termasuk yang paling nyantol di pikiranku entah kenapa.
+Mungkin karena kamu punya cara sendiri buat bikin suasana jadi hangat,
+atau karena kamu bisa ngobrol santai tapi tetap dalem,
+atau bisa juga karena kamu tuh tipe yang kadang cuek tapi sebenernya peduli (iya, aku liat loh itu).
+
+Aku tau, posisi kita sekarang bukan yang spesial-spesial banget.
+Mungkin aku cuma temen biasa di hidup kamu, dan itu gak apa-apa.
+Tapi dari sudut pandang aku, kamu tuh sosok cewek yang layak dihargai, dihormati, dan diperlakukan dengan tulus.
+
+Maka dari itu, hari ini aku pengen bilang:
+Selamat hari cewek yang istimewa… versi kamu sendiri.
+
+Kamu emang bukan ‘girlfriend’ ku,
+tapi kamu tetap cewek yang berharga dan layak dapet ucapan baik di hari ini.
+
+Terima kasih udah pernah jadi bagian dari hari-hariku (walau sekilas atau pelan-pelan).
+Terima kasih juga udah pernah bikin aku senyum sendiri,
+mikirin hal-hal kecil tentang kamu yang mungkin kamu lupa.
+
+Dan ya, semoga siapa pun nanti yang jadi pasangan kamu,
+dia bisa sadar betapa beruntungnya punya kamu, for real.
+
+Hari ini bukan buat mengubah status atau mengharap lebih,
+tapi sekadar pengingat…
+kalau ada seseorang di luar sana yang doain kamu diam-diam,
+yang pengen kamu bahagia,
+dan yang lagi belajar ikhlas tanpa ngarep, tapi tetep gak bisa gak peduli.
+
+Jadi… Happy Girl Friend Day, Mala.
+Dan jangan lupa senyum,
+karena senyum kamu bisa ngerubah hari orang lain (termasuk aku).
+
+Dari seseorang yang (mungkin) kamu anggap biasa,
+tapi gak pernah ngerasa kamu itu biasa
+  </p>
+  <button onclick="nextPage()">Lanjut yuk ➤</button>
+
+  <script>
+    const name = localStorage.getItem("girlName");
+    if (name) {
+      document.getElementById("greeting").innerText = `Hai ${name} 💙`;
+    }
+
+    document.addEventListener("mousemove", function(e) {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = e.pageX + "px";
+      heart.style.top = e.pageY + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 2000);
+    });
+
+    function nextPage() {
+      window.location.href = "page3.html";
+    }
+    <audio controls autoplay loop>
+    <source src="Sempurna - Andra and the backbone.mp3" type="audio/mp3">
+  </audio>
+  </script>
+</body>
+</html>
